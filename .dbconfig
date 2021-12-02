@@ -1,0 +1,13 @@
+const  config = {
+    user:  'sqladmin', // sql user
+    password:  'Icebeareagle94', //sql user password
+    server:  'fau-covid-project-2021.database.windows.net', // if it does not work try- localhost
+    database:  'CovidSite',
+    options: {
+      trustedconnection:  true,
+      encrypt:  true
+    },
+    port:  1433
+  }
+  
+  module.exports = config;
