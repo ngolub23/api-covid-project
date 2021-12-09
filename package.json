@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/ngolub23/api-covid-project#readme",
   "dependencies": {
+    "dotenv": "^10.0.0",
     "mssql": "^7.3.0"
   }
 }

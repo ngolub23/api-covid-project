@@ -1,8 +1,16 @@
 const DBHelper = require('../DBHelper');
 
 module.exports = async function (context, req) {
-    console.log(req);
-    const insertQuery = `INSERT INTO Case(Exposure,Vaccinated,Symptoms,Continuous) Values (${req.body.exposure},${req.body.vaccinated},${req.body.symptoms},${req.body.continuous})`
+    const positiveNegative = 0;
+    if(req.body.positive)
+    {
+        positiveNegative = 1;
+    }
+    if(req.body.negative)
+    {
+        positiveNegative = 0;
+    }
+    const insertQuery = `INSERT INTO Result(PositiveNegative) VALUES (${positiveNegative})`;
     console.log(insertQuery);
     const NewResult = (req,res) => new Promise((resolve,reject) => {
     DBHelper.query(insertQuery, (error, results) => {
